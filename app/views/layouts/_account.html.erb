@@ -1,0 +1,56 @@
+<ul>
+    <% if user_signed_in? %>
+
+    <li>
+      <%= link_to conversations_path do %>
+      <p>
+        <i class="fa fa-envelope text-center" aria-hidden="true"></i>
+        messages
+      </p>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to edit_user_registration_path do %>
+      <p>
+        <i class="fa fa-user text-center" aria-hidden="true"></i>
+      account
+      </p>
+      <% end %>
+    </li>
+
+    <% else %>
+
+    <li>
+      <%= link_to new_user_session_path do %>
+        <p>
+          <i class="fa fa-sign-in text-center" aria-hidden="true"></i>
+        login
+        </p>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to new_user_registration_path do %>
+        <p>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        register
+        </p>
+      <% end %>
+    </li>
+
+    <% end %>
+
+    <% if user_signed_in? %>
+
+      <li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <p>
+          <i class="fa fa-times text-center" aria-hidden="true"></i>
+        log-out
+        </p>
+        <% end %>
+      </li>
+
+    <% end %>
+</ul>

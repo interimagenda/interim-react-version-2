@@ -1,0 +1,18 @@
+<%= f.label :birth_date %>
+<%= f.date_field :birth_date, class: "form-control" %>
+<%= f.label :gender %>
+<%= f.select :gender, options_for_select(%w[Male Female Undefined]), {}, id: 'gender', class: "form-control" %>
+
+
+<%= f.label :education %>
+<%= f.select :education, options_for_select(%w[LBO MBO HBO Academic]), {}, id: 'education', class: "form-control" %>
+
+
+<%= f.label :field %>
+<%= f.text_field :field, class: "form-control" %>
+
+<%= f.label :availability %>
+<%= f.select :availability, options_for_select(%w[Available Unavailable Soon]), {}, class: "form-control", id: 'availability' %>
+
+<%= f.label :pay_rate %><br />
+<%= f.number_field :pay_rate, class: "form-control", min: 20 %>

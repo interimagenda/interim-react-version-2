@@ -1,0 +1,6 @@
+<% @jobs.each do |job| %>
+
+    <p><%= link_to job.title, job_path(job.id) %></p>
+    <p><%= job.created_at %></p>
+
+<% end %>

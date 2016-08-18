@@ -1,0 +1,46 @@
+<header class="page-header bg-img size-lg" style="background-image: url(assets/img/bg-banner2.jpg)">
+  <div class="container">
+    <div class="header-detail">
+      <img class="logo" src="assets/img/logo-google.jpg" alt="">
+      <div class="hgroup">
+        <h1><%= @employer.company_name %> | <%= @employer.last_name %>, <%= @employer.first_name %> </h1>
+        <h3><%= @employer.business %></h3>
+      </div>
+      <hr>
+      <p class="lead"><%= @employer.description %></p>
+
+      <ul class="details cols-3">
+        <li>
+          <i class="fa fa-map-marker"></i>
+          <span><%= @employer.location %></span>
+        </li>
+
+        <li>
+          <i class="fa fa-globe"></i>
+          <a href="#">WEBSITE HERE</a>
+        </li>
+
+        <li>
+          <i class="fa fa-phone"></i>
+          <span>PHONE HERE</span>
+        </li>
+
+        <li>
+          <i class="fa fa-envelope"></i>
+          <a href="#"><%= @employer.email %></a>
+        </li>
+      </ul>
+
+      <div class="button-group">
+        <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</header>

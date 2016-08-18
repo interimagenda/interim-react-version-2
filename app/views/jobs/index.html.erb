@@ -1,0 +1,15 @@
+<% if user_signed_in? && current_user.type === 'Freelancer'%>
+
+<%= render 'search' %>
+
+<% end %>
+
+<%= render 'jobs' %>
+
+<%= will_paginate %>
+
+<% if user_signed_in? && current_user.type === 'Employer'%>
+
+<%= link_to 'create job', new_job_path %>
+
+<% end %>

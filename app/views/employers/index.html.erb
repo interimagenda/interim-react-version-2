@@ -1,0 +1,37 @@
+<%= render 'search' %>
+
+<main>
+  <section class="no-padding-top bg-alt">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Employers</h2>
+        </div>
+
+        <% @employers.each do |employer| %>
+
+        <div class="col-xs-12">
+          <%= link_to employer_path(employer.id), class: "item-block" do %>
+            <header>
+              <img src="https://placeholdit.imgix.net/~text?txtsize=7&txt=56%C3%9756&w=56&h=56" alt="logo">
+              <div class="hgroup">
+                <h4><%= employer.company_name %></h4>
+                <h5><%= employer.business %></h5>
+              </div>
+              <span class="location"><%= employer.location %></span>
+            </header>
+
+
+            <div class="item-body">
+              <p><%= employer.description %></p>
+            </div>
+          <% end %>
+        </div>
+
+        <% end %>
+
+        <%= will_paginate %>
+        </div>
+    </div>
+    </section>
+</main>
