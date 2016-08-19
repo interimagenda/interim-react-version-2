@@ -3,7 +3,7 @@
 <%= render 'search' %>
 
 <%= link_to "Available", freelancers_path(availability: "Available"), class:"btn btn-default" %>
-<%= link_to "Just my business", freelancers_path(business: current_user.business ), class:"btn btn-default" %>
+<%= link_to "In my business", freelancers_path(availability: "Available", business: current_user.business), class:"btn btn-default" %>
 
 <% @freelancers.each do |freelancer| %>
         <p><%= link_to freelancer.first_name, freelancer_path(freelancer.id) %></p>

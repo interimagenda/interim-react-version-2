@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem 'themify-icons-rails'
+gem 'filterrific'
 
 group :development, :test do
   gem 'byebug'

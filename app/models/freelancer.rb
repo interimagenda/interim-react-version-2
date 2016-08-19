@@ -1,5 +1,12 @@
 class Freelancer < User
 
+  filterrific(
+  available_filters: [
+    :availability,
+    :business
+  ])
+
+
   scope :availability, -> (availability) { where availability: availability }
   scope :business, -> (business) { where business: business }
   scope :field, -> (field) { where field: field }
@@ -8,7 +15,7 @@ class Freelancer < User
   include Filterable
 
   validates_presence_of :gender, :education, :field, :availability, :pay_rate, on: :update
-  validates :availability, inclusion: { in: %w(Available Unavailable Soon),
+  validates :availability, inclusion: { in: %w(Available Unavailable),
     message: "%{value} is not a valid availability type"}, on: :update
   validates :gender, inclusion: { in: %w(Male Female Undefined),
     message: "%{value} is not a valid gender" }, on: :update
@@ -18,5 +25,5 @@ class Freelancer < User
   def self.search(query)
     where("last_name ILIKE ? OR business ILIKE ? OR field ILIKE ? ", "%#{query}%", "%#{query}%", "%#{query}%")
   end
-  
+
 end

@@ -8,7 +8,12 @@ class FreelancersController < ApplicationController
     else
       @freelancers = Freelancer.all.order('created_at DESC')
     end
-    @freelancers = Freelancer.filter(params.slice(:availability, :business, :field, :education)).paginate(page: params[:page], per_page: 25)
+    @filterrific = initialize_filterrific(
+      Freelancer,
+      params[:filterrific]
+    ) or return
+    @freelancers = @filterrific.find.page(params[:page])
+    # @freelancers = Freelancer.filter(params.slice(:availability, :business, :field, :education)).paginate(page: params[:page], per_page: 25)
   end
 
   def show
