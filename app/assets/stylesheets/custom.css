@@ -5,3 +5,7 @@
 .input-keyword {
   width: 100% !important;
 }
+
+.site-header {
+  background: image-url("background-lg-woman-1.jpg") fixed left top;
+}
