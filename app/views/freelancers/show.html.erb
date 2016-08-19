@@ -1,10 +1,68 @@
-<h2><%= @freelancer.first_name %> <%= @freelancer.last_name %></h2>
+<header class="page-header bg-img" style="background-image: url(assets/img/bg-banner1.jpg)">
+  <div class="container">
+    <div class="row">
 
-<p><%= @freelancer.location %></p>
-<p><%= @freelancer.business %></p>
-<p><%= @freelancer.field %></p>
-<p><%= @freelancer.education %></p>
-<p><%= @freelancer.availability %></p>
-<p><%= @freelancer.pay_rate %></p>
+      <div class="col-xs-12 col-sm-8 header-detail">
+        <div class="hgroup">
+          <h1><%= @freelancer.first_name %> <%= @freelancer.last_name %></h1>
+          <h3><%= @freelancer.field %></h3>
+          <h5><%= @freelancer.business %></h5>
+        </div>
+        <hr>
+        <p class="lead"><%= @freelancer.description %></p>
 
-<p><%= @freelancer.description %></p>
+        <ul class="details cols-2">
+          <li>
+            <i class="fa fa-map-marker"></i>
+            <span><%= @freelancer.location %></span>
+          </li>
+
+          <li>
+            <i class="fa fa-globe"></i>
+            <a href="#">WEBSITE</a>
+          </li>
+
+          <li>
+            <i class="fa fa-money"></i>
+            <span><%= @freelancer.pay_rate %>r</span>
+          </li>
+
+          <li>
+            <i class="fa fa-birthday-cake"></i>
+            <span><%= @freelancer.birth_date %></span>
+          </li>
+
+          <li>
+            <i class="fa fa-phone"></i>
+            <span>PHONE</span>
+          </li>
+
+          <li>
+            <i class="fa fa-envelope"></i>
+            <a href="#"><%= @freelancer.email %></a>
+          </li>
+        </ul>
+
+        <div class="tag-list">
+          <span>TAG1</span>
+          <span>TAG2</span>
+          <span>TAG3</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <ul class="social-icons">
+        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+
+      <div class="action-buttons">
+        <a class="btn btn-success" data-toggle="modal" data-target="#modal-contact" href="#">Contact me</a>
+      </div>
+    </div>
+  </div>
+</header>

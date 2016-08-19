@@ -1,0 +1,20 @@
+<header class="page-header bg-img" style="background-image: url(assets/img/bg-banner1.jpg);">
+  <div class="container page-name">
+    <h1 class="text-center">Browse companies</h1>
+    <p class="lead text-center">Find your challenge</p>
+  </div>
+  <div class="container">
+    <%= form_tag '/employers', :method => "get", id: "search-form" do %>
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <%= search_field_tag :search, params[:search], placeholder: "insert a search query here", autofocus: true, class: "form-control" %>
+        </div>
+      </div>
+      <div class="button-group">
+        <div class="action-buttons">
+          <%= submit_tag "search", :name => nil, id: "search-form", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</header>

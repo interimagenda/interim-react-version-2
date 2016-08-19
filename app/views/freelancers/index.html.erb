@@ -1,15 +1,57 @@
-<h2>Freelancers</h2>
+<%= render 'header' %>
 
-<%= render 'search' %>
+<main>
+  <section class="no-padding-top bg-alt">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Freelancers</h2>
+        </div>
+        <% @freelancers.each do |freelancer| %>
+          <div class="col-xs-12">
+            <%= link_to freelancer_path(freelancer.id), class: "item-block" do %>
+              <header>
+                <div class="hgroup">
+                  <h4><%= freelancer.first_name %></h4>
+                  <h5><%= freelancer.field %></h5>
+                </div>
+              </header>
+              <div class="item-body">
+                <p><%= freelancer.description %></p>
 
-<%= link_to "Available", freelancers_path(availability: "Available"), class:"btn btn-default" %>
-<%= link_to "In my business", freelancers_path(availability: "Available", business: current_user.business), class:"btn btn-default" %>
+                <div class="tag-list">
+                  <span>TAG1</span>
+                  <span>TAG2</span>
+                  <span>TAG3</span>
+                  <span>TAG4</span>
+                </div>
+              </div>
+              <footer>
+                <ul class="details cols-3">
+                  <li>
+                    <i class="fa fa-map-marker"></i>
+                    <span><%= freelancer.location %></span>
+                  </li>
+                  <li>
+                    <i class="fa fa-money"></i>
+                    <span><%= freelancer.pay_rate %></span>
+                  </li>
+                  <li>
+                    <i class="fa fa-certificate"></i>
+                    <span><%= freelancer.education %></span>
+                  </li>
+                </ul>
+              </footer>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>
 
-<% @freelancers.each do |freelancer| %>
-        <p><%= link_to freelancer.first_name, freelancer_path(freelancer.id) %></p>
-        <p><%= freelancer.business %></p>
-        <p><%= freelancer.field %></p>
-        <p><%= freelancer.availability %></p>
-<% end %>
+
+
+
 
 <%= will_paginate %>

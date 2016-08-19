@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users, controllers: { registrations: 'registrations'}
   devise_for :freelancers, :employers, :skip => :sessions
 
@@ -19,6 +20,9 @@ Rails.application.routes.draw do
   end
   resources :messages, only: [:new, :create]
 
-  root 'jobs#index'
+  root 'landing#index'
+  get 'pages/contact'
+  get 'pages/about'
+  get 'pages/news'
 
 end

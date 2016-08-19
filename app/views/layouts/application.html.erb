@@ -15,11 +15,10 @@
 
   <% if !current_user %>
 
-  <%= render "layouts/header" %>
-
   <% end %>
 
 <%= yield %>
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
