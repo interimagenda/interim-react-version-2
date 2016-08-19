@@ -9,3 +9,7 @@
 .site-header {
   background: image-url("background-lg-woman-1.jpg") fixed left top;
 }
+
+.container-background-image {
+  background: image-url("background-lg-woman-1.jpg") fixed left top;
+}
