@@ -1,15 +1,13 @@
 class EmployersController < ApplicationController
-  
+
   before_action :authenticate_user!
 
   def index
     if params[:search]
-      @employers = Employer.search(params[:search]).order("created_at DESC")
+      @employers = Employer.search(params[:search]).order("created_at DESC").paginate(page: params[:page], per_page: 25)
     else
-      @employers = Employer.all.order('created_at DESC')
+      @employers = Employer.all.order('created_at DESC').paginate(page: params[:page], per_page: 25)
     end
-    @employers = Employer.paginate(page: params[:page], per_page: 25)
-
   end
 
   def show

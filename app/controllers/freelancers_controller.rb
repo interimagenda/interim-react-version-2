@@ -4,16 +4,10 @@ class FreelancersController < ApplicationController
 
   def index
     if params[:search]
-      @freelancers = Freelancer.search(params[:search]).order("created_at DESC")
+      @freelancers = Freelancer.search(params[:search]).order("created_at DESC").filter(params.slice(:availability, :business, :field, :education)).paginate(page: params[:page], per_page: 25)
     else
-      @freelancers = Freelancer.all.order('created_at DESC')
+      @freelancers = Freelancer.all.order('created_at DESC').filter(params.slice(:availability, :business, :field, :education)).paginate(page: params[:page], per_page: 25)
     end
-    @filterrific = initialize_filterrific(
-      Freelancer,
-      params[:filterrific]
-    ) or return
-    @freelancers = @filterrific.find.page(params[:page])
-    # @freelancers = Freelancer.filter(params.slice(:availability, :business, :field, :education)).paginate(page: params[:page], per_page: 25)
   end
 
   def show
