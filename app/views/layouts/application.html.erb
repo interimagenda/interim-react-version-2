@@ -9,7 +9,13 @@
 </head>
 <body
 class="
-<% if current_page?(new_user_registration_path )|| current_page?(new_user_session_path) %>login-page
+<% if
+  current_page?(new_user_registration_path )||
+  current_page?(edit_user_registration_path)||
+  current_page?(new_user_session_path) ||
+  current_page?(new_user_password_path) ||
+  current_page?(edit_user_password_path)
+%>login-page
 <% else %> nav-on-header smart-nav <% end %>">
 
   <%= render "layouts/navigation" %>

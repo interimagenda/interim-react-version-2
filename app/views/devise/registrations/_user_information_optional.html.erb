@@ -5,7 +5,7 @@
 <%= f.select :gender, options_for_select(%w[Male Female Undefined]), {}, id: 'gender', class: "form-control" %>
 
 <%= f.label :description %>
-<%= f.text_area :description, cols: 40, rows: 15, class: "form-control" %>
+<%= f.text_area :description, cols: 7, rows: 5, class: "form-control" %>
 
 <%= f.label :linkedin %>
 <%= f.text_field :linkedin, class: "form-control" %>
@@ -16,8 +16,7 @@
 <%= f.label :facebook %>
 <%= f.text_field :facebook, class: "form-control" %>
 
-<%= f.label :portfolio %>
-<%= f.text_field :portfolio, class: "form-control" %>
+<!-- portfolio -->
 
 <%= f.label :github %>
 <%= f.text_field :github, class: "form-control" %>
