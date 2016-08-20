@@ -13,10 +13,10 @@
 
     <!-- Navigation menu -->
     <ul class="nav-menu">
-      <% if user_signed_in? && current_user.type === 'Freelancer' %>
       <li>
           <%= link_to 'Jobs', jobs_path %>
       </li>
+      <% if user_signed_in? && current_user.type === 'Freelancer' %>
       <li>
           <%= link_to 'Employers', employers_path %>
       </li>
@@ -33,7 +33,7 @@
         <%= link_to 'Contact', pages_contact_path %>
       </li>
       <li>
-        <%= link_to 'News', pages_news_path %>
+        <%= link_to 'Blogs', pages_blogs_path %>
       </li>
     </ul>
     <!-- END Navigation menu -->
@@ -52,15 +52,6 @@
 
 <ul>
   <% if user_signed_in? %>
-
-    <li>
-      <%= link_to conversations_path do %>
-      <p>
-        <i class="fa fa-envelope text-center" aria-hidden="true"></i>
-        messages
-      </p>
-      <% end %>
-    </li>
 
     <li><%= link_to edit_user_registration_path do %>
       <p>

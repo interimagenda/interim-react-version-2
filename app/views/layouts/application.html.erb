@@ -7,9 +7,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body <% if current_page?(new_user_registration_path )|| current_page?(new_user_session_path) %> class="login-page" <% end %>>
-
-
+<body
+class="
+<% if current_page?(new_user_registration_path )|| current_page?(new_user_session_path) %>login-page<% end %>
+<% if current_page?(pages_about_path)|| current_page?(pages_contact_path) || current_page?(pages_blogs_path) %>nav-on-header smart-nav<% end %>
+">
 
   <%= render "layouts/navigation" %>
 

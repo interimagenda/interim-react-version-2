@@ -2,15 +2,6 @@
     <% if user_signed_in? %>
 
     <li>
-      <%= link_to conversations_path do %>
-      <p>
-        <i class="fa fa-envelope text-center" aria-hidden="true"></i>
-        messages
-      </p>
-      <% end %>
-    </li>
-
-    <li>
       <%= link_to edit_user_registration_path do %>
       <p>
         <i class="fa fa-user text-center" aria-hidden="true"></i>
