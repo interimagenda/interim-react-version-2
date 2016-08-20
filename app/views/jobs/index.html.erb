@@ -1,13 +1,53 @@
 <%= render "header" %>
 
-<%= render 'jobs' %>
+<main>
+  <section class="no-padding-top bg-alt">
+    <div class="container">
+      <div class="row">
+
+        <% @jobs.each do |job| %>
+
+        <div class="col-xs-12">
+          <a class="item-block" href="job-detail.html">
+            <header>
+              <img src="assets/img/logo-google.jpg" alt="">
+              <div class="hgroup">
+                <h4><%= job.title %></h4>
+                <h5>COMPANY_NAME <span class="label label-success"><%= job.hours_a_week %>h</span></h5>
+              </div>
+              <time><%= job.created_at %></time>
+            </header>
+
+            <div class="item-body">
+              <p><%= job.job_description %></p>
+            </div>
+
+            <footer>
+              <ul class="details cols-3">
+                <li>
+                  <i class="fa fa-map-marker"></i>
+                  <span><%= job.job_city %>, <%= job.job_country %></span>
+                </li>
+
+                <li>
+                  <i class="fa fa-money"></i>
+                  <span>Min: <%= job.pay_rate_minimum %> | Max: <%= job.pay_rate_maximum %></span>
+                </li>
+
+                <li>
+                  <i class="fa fa-certificate"></i>
+                  <span><%= job.education_or_experience_level %></span>
+                </li>
+              </ul>
+            </footer>
+          </a>
+        </div>
+
+        <% end %>
+
+      </section>
+    </main>
+  </div>
+</div>
 
 <%= will_paginate %>
-
-<% if user_signed_in? && current_user.type === 'Employer'%>
-
-<%= link_to 'create job', new_job_path %>
-
-<%= link_to 'my jobs', new_job_path %>
-
-<% end %>

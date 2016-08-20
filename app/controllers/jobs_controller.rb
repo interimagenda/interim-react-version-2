@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   before_action :ensure_employer!, only: [:edit, :update, :new, :create, :destroy]
 
   def index
-    @jobs = Job.all.paginate(page: params[:page], per_page: 25)
+    @jobs = Job.all.paginate(page: params[:page], per_page: 25).filter(params.slice(:business, :field, :pay_rate_minimum)).paginate(page: params[:page], per_page: 25)
   end
 
   def show
@@ -46,7 +46,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require( :job ).permit(:title, :start_date, :job_description, :offered_pay_rate )
+    params.require( :job ).permit(:title, :employer_id, :start_date, :job_description, :offered_pay_rate )
   end
 
   protected

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521195233) do
+ActiveRecord::Schema.define(version: 20160820113250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,21 @@ ActiveRecord::Schema.define(version: 20160521195233) do
     t.string   "title"
     t.date     "start_date"
     t.integer  "employer_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "offered_pay_rate"
     t.text     "job_description"
+    t.string   "job_city"
+    t.string   "job_country"
+    t.integer  "hours_a_week"
+    t.string   "experience_requirement"
+    t.decimal  "pay_rate_minimum"
+    t.decimal  "pay_rate_maximum"
+    t.text     "responsibilities"
+    t.string   "education_or_experience_level"
+    t.string   "official_requirements"
+    t.text     "certificate_requirements"
+    t.text     "skill_requirements"
   end
 
   add_index "jobs", ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
@@ -52,18 +63,29 @@ ActiveRecord::Schema.define(version: 20160521195233) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "type"
-    t.string   "company_name"
-    t.string   "location"
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birth_date"
     t.string   "gender"
-    t.string   "education"
     t.string   "business"
-    t.string   "field"
     t.text     "description"
+    t.string   "country"
+    t.string   "linkedin"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "github"
+    t.string   "avatar"
+    t.string   "city"
+    t.string   "company_name"
+    t.string   "company_location"
+    t.string   "education"
+    t.string   "field"
     t.string   "availability"
-    t.integer  "pay_rate"
+    t.decimal  "pay_rate"
+    t.text     "traits"
+    t.text     "skills"
+    t.text     "credentials"
+    t.text     "certificates"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

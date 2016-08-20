@@ -1,1 +1,61 @@
-<h2>Job</h2>
+<header class="page-header bg-img size-lg">
+  <div class="container">
+    <div class="header-detail">
+      <div class="hgroup">
+        <h1><%= @job.title %></h1>
+        <h3><a href="#">EMPLOYER_HERE</a></h3>
+      </div>
+      <time>Job created: <%= @job.created_at %></time>
+      <hr>
+      <p class="lead"><%= @job.job_description %></p>
+
+      <ul class="details cols-3">
+        <li>
+          <i class="fa fa-map-marker"></i>
+          <span><%= @job.job_city %>, <%= @job.job_country %></span>
+        </li>
+
+        <li>
+          <i class="fa fa-clock-o"></i>
+          <span>40h / week</span>
+        </li>
+
+        <li>
+          <i class="fa fa-flask"></i>
+          <span><%= @job.experience_requirement %></span>
+        </li>
+
+        <li>
+          <i class="fa fa-certificate"></i>
+          <a href="#"> <%= @job.education_or_experience_level %>r</a>
+        </li>
+
+        <li>
+          <i class="fa fa-money"></i>
+          <span>Minimum: <%= @job.pay_rate_minimum %></span>
+        </li>
+
+        <li>
+          <i class="fa fa-money"></i>
+          <span>Maximum: <%= @job.pay_rate_maximum %></span>
+        </li>
+      </ul>
+
+      <div class="button-group">
+        <ul class="social-icons">
+          <li class="title">Share on</li>
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        </ul>
+
+        <div class="action-buttons">
+          <a class="btn btn-primary" href="#">Apply with linkedin</a>
+          <a class="btn btn-success" href="job-apply.html">Apply now</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>

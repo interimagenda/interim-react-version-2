@@ -1,0 +1,26 @@
+<%= f.label :birth_date %>
+<%= f.date_field :birth_date, class: "form-control" %>
+
+<%= f.label :gender %>
+<%= f.select :gender, options_for_select(%w[Male Female Undefined]), {}, id: 'gender', class: "form-control" %>
+
+<%= f.label :description %>
+<%= f.text_area :description, cols: 40, rows: 15, class: "form-control" %>
+
+<%= f.label :linkedin %>
+<%= f.text_field :linkedin, class: "form-control" %>
+
+<%= f.label :twitter %>
+<%= f.text_field :twitter, class: "form-control" %>
+
+<%= f.label :facebook %>
+<%= f.text_field :facebook, class: "form-control" %>
+
+<%= f.label :portfolio %>
+<%= f.text_field :portfolio, class: "form-control" %>
+
+<%= f.label :github %>
+<%= f.text_field :github, class: "form-control" %>
+
+<%= f.label :avatar %>
+<%= f.text_field :avatar, class: "form-control" %>

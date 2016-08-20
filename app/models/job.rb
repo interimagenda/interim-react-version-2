@@ -1,6 +1,11 @@
 class Job < ActiveRecord::Base
 
-  validates_presence_of :title, :start_date, :offered_pay_rate, :job_description
   belongs_to :employer, dependent: :destroy
-  
+
+  include Filterable
+
+  scope :business, -> (business) { where business: business }
+  scope :field, -> (field) { where field: field }
+  scope :pay_rate_minimum, -> (pay_rate_minimum) { where pay_rate_minimum: pay_rate_minimum }
+
 end
