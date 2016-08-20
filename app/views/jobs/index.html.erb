@@ -1,8 +1,4 @@
-<% if user_signed_in? && current_user.type === 'Freelancer'%>
-
-<%= render 'search' %>
-
-<% end %>
+<%= render "header" %>
 
 <%= render 'jobs' %>
 
@@ -11,5 +7,7 @@
 <% if user_signed_in? && current_user.type === 'Employer'%>
 
 <%= link_to 'create job', new_job_path %>
+
+<%= link_to 'my jobs', new_job_path %>
 
 <% end %>

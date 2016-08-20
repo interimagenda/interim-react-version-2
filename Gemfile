@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
-gem 'chosen-rails'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-turbolinks'
 gem 'material_icons'
-gem 'gravatar_image_tag'
-gem "mailboxer"
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
@@ -23,7 +19,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
 gem 'themify-icons-rails'
-gem 'filterrific'
 
 group :development, :test do
   gem 'byebug'

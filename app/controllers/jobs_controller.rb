@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:show, :edit, :update, :new, :create, :destroy]
+  before_action :ensure_employer!, only: [:edit, :update, :new, :create, :destroy]
 
   def index
     @jobs = Job.all.paginate(page: params[:page], per_page: 25)
@@ -46,6 +47,28 @@ class JobsController < ApplicationController
 
   def job_params
     params.require( :job ).permit(:title, :start_date, :job_description, :offered_pay_rate )
+  end
+
+  protected
+
+  def ensure_freelancer!
+    unless current_user.type == "Freelancer"
+      sign_out current_user
+
+      redirect_to root_path
+
+      return false
+    end
+  end
+
+  def ensure_employer!
+    unless current_user.type == "Employer"
+      sign_out current_user
+
+      redirect_to root_path
+
+      return false
+    end
   end
 
 end

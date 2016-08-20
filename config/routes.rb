@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :freelancers
   resources :jobs
 
-  root 'landing#index'
-  get 'pages/contact'
-  get 'pages/about'
-  get 'pages/blogs'
+  root 'pages#landing'
+  get 'contact' => 'pages#contact', as: 'contact'
+  get 'about' => 'pages#about', as: 'about'
+  get 'blogs' => 'pages#blogs', as: 'blogs'
 
 end

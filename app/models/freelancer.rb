@@ -1,11 +1,5 @@
 class Freelancer < User
 
-  filterrific(
-  available_filters: [
-    :availability,
-    :business
-  ])
-
   scope :availability, -> (availability) { where availability: availability }
   scope :business, -> (business) { where business: business }
   scope :field, -> (field) { where field: field }

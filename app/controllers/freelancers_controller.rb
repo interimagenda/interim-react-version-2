@@ -1,6 +1,6 @@
 class FreelancersController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :ensure_employer!
 
   def index
     if params[:search]
@@ -31,6 +31,20 @@ class FreelancersController < ApplicationController
     @freelancer = Freelancer.find(params[:id])
     @freelancer.destroy
     redirect_to freelancers_path
+  end
+
+  private
+
+  # unless the current user is an employer, log out.
+
+  def ensure_employer!
+    unless current_user.type == "Employer"
+      sign_out current_user
+
+      redirect_to root_path
+
+      return false
+    end
   end
 
 end
